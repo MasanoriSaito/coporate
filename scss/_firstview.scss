@@ -27,6 +27,11 @@
         font-weight: bold;
         padding-bottom: 20px;
         white-space: nowrap;
+        @include sp {
+            &.open {
+                opacity: 0;
+            }
+        }
     }
 
     &__catch:after {

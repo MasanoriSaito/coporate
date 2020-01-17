@@ -292,7 +292,7 @@ header #ham_menu {
   padding-top: 110px;
   width: 40vw;
   height: 90vh;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   color: black;
   -webkit-transform: translateX(100vw);
           transform: translateX(100vw);
@@ -302,9 +302,22 @@ header #ham_menu {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
+@media screen and (max-width: 600px) {
+  header #ham_menu {
+    width: 100vw;
+  }
+}
+
 header #ham_menu.open {
   -webkit-transform: translateX(60vw);
           transform: translateX(60vw);
+}
+
+@media screen and (max-width: 600px) {
+  header #ham_menu.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 header #ham_menu li {
@@ -353,6 +366,12 @@ header #ham_menu li {
   font-weight: bold;
   padding-bottom: 20px;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+  .fv_wrap__catch.open {
+    opacity: 0;
+  }
 }
 
 .fv_wrap__catch:after {
