@@ -194,68 +194,123 @@ body {
 
 header {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
-  color: #fff;
   position: absolute;
   z-index: 10;
+  overflow: hidden;
 }
 
-header h1 {
-  font-size: 1.8rem;
-}
-
-header .hum {
-  width: 25px;
-  height: 14px;
+header .js-icon {
+  color: #fff;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
+header .js-icon h1 {
+  font-size: 1.8rem;
+}
+
+header .js-icon #ham_open {
+  width: 25px;
+  height: 15px;
+  position: relative;
+}
+
+header .js-icon #ham_open:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 960px) {
-  header .hum {
+  header .js-icon #ham_open {
     display: none;
   }
 }
 
-header .hum span {
-  border-bottom: 1px solid;
+header .js-icon #ham_open span {
+  width: 25px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
-header nav {
+header .js-icon #ham_open .ham_top.open {
+  top: 7.5px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+header .js-icon #ham_open .ham_middle {
+  top: 7.5px;
+}
+
+header .js-icon #ham_open .ham_middle.open {
+  opacity: 0;
+}
+
+header .js-icon #ham_open .ham_bottom {
+  top: 15px;
+}
+
+header .js-icon #ham_open .ham_bottom.open {
+  top: 7.5px;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+header .js-icon .hd_menu {
   width: 45%;
   font-size: 1.5rem;
 }
 
 @media screen and (max-width: 959px) {
-  header nav {
+  header .js-icon .hd_menu {
     display: none;
   }
 }
 
-header ul {
+header .js-icon .hd_menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+header #ham_menu {
+  padding-top: 110px;
+  width: 40vw;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+header #ham_menu.open {
+  -webkit-transform: translateX(60vw);
+          transform: translateX(60vw);
+}
+
+header #ham_menu li {
+  font-size: 1.5rem;
+  line-height: 30px;
+  text-align: center;
 }
 
 #firstview {

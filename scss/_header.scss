@@ -1,45 +1,101 @@
 header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    color: #fff;
     position: absolute;
     z-index: 10;
+    overflow: hidden;
 
-    h1 {
+    .js-icon {
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
         font-size: 1.8rem;
-    }
+        }
 
-    .hum {
-        width: 25px;
-        height: 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        @include pc {
+        #ham_open {
+            width: 25px;
+            height: 15px;
+            position: relative;
+            
+    
+            &:hover {
+                cursor: pointer;
+            }
+    
+            @include pc {
+                display: none;
+            }
+            
+            span {
+                width: 25px;
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                transition: transform 0.5s, opacity 0.5s;
+            }
+    
+            .ham_top {
+                &.open {
+                    top: 7.5px;
+                    transform: rotateZ(45deg);
+                }
+            }
+    
+            .ham_middle {
+                top: 7.5px;
+                &.open {
+                    opacity: 0;
+                }
+            }
+    
+            .ham_bottom {
+                top: 15px;
+                &.open {
+                    top: 7.5px;
+                    transform: rotateZ(-45deg);
+                }
+            }
+    
+        }
+    
+        .hd_menu {
+            width: 45%;
+            font-size: 1.5rem;
+    
+            @include tab {
             display: none;
-        }
-        
-        span {
-            border-bottom: 1px solid;
-        }
-    }
-
-    nav {
-        width: 45%;
-        font-size: 1.5rem;
-
-        @include tab {
-        display: none;
+            }
+    
+            ul {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 
-    ul {
-        display: flex;
-        justify-content: space-between;
+
+    #ham_menu {
+        padding-top: 110px;
+        width: 40vw;
+        height: 90vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: black;
+        transform: translateX(100vw);
+        transition: transform 0.5s;
+
+        &.open {
+            transform: translateX(60vw);
+        }
+
+        li {
+            font-size: 1.5rem;
+            line-height: 30px;
+            text-align: center;
+        }
     }
+
 }
 
